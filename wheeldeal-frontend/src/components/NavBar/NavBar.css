@@ -1,0 +1,262 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    font-size: 1.1rem;
+
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: white;
+    z-index: 1000;
+}
+
+.nav-left {
+    display: flex;
+    align-items: center;
+    gap: 10px; 
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.logo::before {
+    content: '';
+    display: inline-block;
+    width: 30px;           
+    height: 30px;          
+    margin-right: 15px;
+    margin-left: 15px;
+    background-image: url('../../../public/img/logo/wd-logo.png'); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.logo::before {
+    transition: transform 0.2s ease;
+}
+
+.logo:hover::before {
+    transform: scale(1.3); 
+}
+
+
+.nav-center {
+    margin-left: 60px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.nav-links li:hover {
+    opacity: 0.7;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.login-btn {
+    font-size: 1.1rem;
+    padding: 6px 14px;
+    background: transparent;
+    color: lbacl;
+    border: 1px solid white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.login-btn:hover {
+    background: white;
+    color: black;
+}
+
+.user-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #fff;
+}
+.user-dropdown {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    padding: 5px 10px;
+    border-radius: 6px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.user-dropdown::before,
+.user-dropdown::after {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 6px;
+    z-index: -1;
+    transition: opacity 0.5s ease;
+}
+
+.user-dropdown::before {
+    background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(66,149,190,0.7));
+    opacity: 1;
+}
+
+.user-dropdown::after {
+    background: linear-gradient(135deg, rgba(157,100,57,0.7), rgba(66,149,190,0.7));
+    opacity: 0;
+}
+
+.user-dropdown:hover::after {
+    opacity: 1;
+}
+
+.user-dropdown:hover::before {
+    opacity: 0;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: black;
+    color: white;
+    border-radius: 8px;
+    min-width: 100%; 
+    width: max-content; 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    display: none;
+    flex-direction: column;
+    z-index: 1000;
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    width: 100%;
+    box-sizing: border-box; 
+}
+
+
+.user-dropdown:hover .dropdown-menu {
+    display: flex; 
+}
+
+.dropdown-item {
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background: #333;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.nav-toggle span {
+    display: block;
+    height: 3px;
+    width: 100%;
+    background: white;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 15px;
+        height: 60px;
+    }
+
+    .nav-left {
+        gap: 5px;
+    }
+
+    .nav-center {
+        position: fixed;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        flex-direction: column;
+        background: rgba(0,0,0,0.95);
+        gap: 20px;
+        padding: 15px 0;
+        align-items: center;
+        display: none; 
+        z-index: 999;
+    }
+
+    .nav-center.active {
+        display: flex; 
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-right {
+        margin-right: 0;
+    }
+    
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    .logo::before {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+    }
+}

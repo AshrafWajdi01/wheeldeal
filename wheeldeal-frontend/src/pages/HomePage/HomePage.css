@@ -1,0 +1,178 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+.home-form {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 20px 50px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    max-width: 1100px;
+    color: white;
+}
+
+.welcome-section {
+    flex: 1;
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.home-logo-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.home-logo {
+    width: 200px;
+    height: 200px;
+    background-image: url('../../../public/img/logo/wd-logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 0.3s ease;
+    animation: flip 3s linear infinite;
+}
+
+@keyframes flip {
+    0% {
+        transform: perspective(400px) rotateY(0);
+    }
+    100% {
+        transform: perspective(400px) rotateY(360deg);
+    }
+}
+
+.welcome-text h2 {
+    margin-bottom: 10px;
+    font-size: 2rem;
+}
+
+.welcome-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.car-slider {
+    flex: 1;
+    min-width: 400px;
+}
+
+.car-slide {
+    cursor: pointer;
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    background: rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
+}
+
+.car-slide:hover {
+    transform: scale(1.02);
+}
+
+.car-slide img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.car-info {
+    padding: 15px;
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 0 0 10px 10px;
+}
+
+.car-info h4 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.car-info p {
+    margin: 5px 0;
+    font-size: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .home-form {
+        flex-direction: column;
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .welcome-section,
+    .car-slider {
+        min-width: auto; 
+        width: 100%;     
+    }
+
+    .home-logo {
+        width: 150px;
+        height: 150px;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.8rem;
+    }
+
+    .welcome-text p {
+        font-size: 0.95rem;
+    }
+
+    .car-slide img {
+        height: 220px; /* smaller car images */
+    }
+
+    .car-info h4 {
+        font-size: 1.1rem;
+    }
+
+    .car-info p {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 576px) {
+    .home-form {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .home-logo {
+        width: 120px;
+        height: 120px;
+    }
+
+    .welcome-text h2 {
+        font-size: 1.5rem;
+    }
+
+    .welcome-text p {
+        font-size: 0.85rem;
+    }
+
+    .car-slide img {
+        height: 180px;
+    }
+
+    .car-info h4 {
+        font-size: 1rem;
+    }
+
+    .car-info p {
+        font-size: 0.8rem;
+    }
+}

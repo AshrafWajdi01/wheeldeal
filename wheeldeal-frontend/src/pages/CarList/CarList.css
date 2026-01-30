@@ -1,0 +1,15 @@
+.car-list-container {
+    padding: 80px 30px 30px; 
+    display: flex;
+    justify-content: center;
+}
+
+.car-list {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+}
+
