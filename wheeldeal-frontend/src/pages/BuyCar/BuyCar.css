@@ -4,8 +4,9 @@
     padding: 20px;
     min-width: 1000px; 
     margin: 0 auto; 
-    height: 65vh;
+    height: 65vh; 
     box-sizing: border-box;
+    align-items: stretch; 
 }
 
 .filter-sidebar {
@@ -27,7 +28,7 @@
 .filter-sidebar {
     width: 280px;
     min-width: 280px;
-    max-height: 560px;
+    min-height: 560px;
     background: rgba(0, 0, 0, 0.5);
     padding: 20px;
     border-radius: 8px;
